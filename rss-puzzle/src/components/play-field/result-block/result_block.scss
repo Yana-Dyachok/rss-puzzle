@@ -1,0 +1,105 @@
+@import '../../../styles/colors.scss';
+@import '../mixin_source_block.scss';
+@import '../card_animations.scss';
+
+.play-field_result  {
+    min-width: 100%;
+    width: fit-content;
+    min-height: 10rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    color: $c-white;
+    border: 0.1rem solid $c-white;
+    border-radius: 1rem;
+
+    &-round {
+        width: fit-content;
+        display: flex;
+        padding: 0.1rem 0.5rem;
+    }
+
+    &-card {
+        padding: 1rem 1.5rem 2rem;
+        margin: 0 -0.5rem -1rem;
+        display: inline-block;
+        overflow-x: hidden;
+        transition: transform 0.6s ease;
+        animation: cardResultAnimation 0.6s ease-out;
+        cursor: pointer;
+        @include puzzle-background($c-blue-500);
+
+        &.correct {
+            @include puzzle-background($c-green);
+        }
+
+        &.done {
+            @include puzzle-background($c-gray);
+        }
+
+        &:hover,
+        &:focus {
+            @include puzzle-background($c-brown-600);
+        }
+    }
+
+    &-card[data-result='0'] {
+        @include puzzle-background-first($c-blue-500);
+
+        &.correct {
+            @include puzzle-background-first($c-green);
+        }
+
+        &.done {
+            @include puzzle-background-first($c-gray);
+        }
+
+        &:hover,
+        &:focus {
+            @include puzzle-background-first($c-brown-600);
+        }
+    }
+
+    &-card[data-result='last'] {
+        margin-right: 0.5rem;
+        @include puzzle-background-last($c-blue-500);
+
+        &.correct {
+            @include puzzle-background-last($c-green);
+        }
+
+        &.done {
+            @include puzzle-background-last($c-gray);
+        }
+
+        &:hover,
+        &:focus {
+            @include puzzle-background-last($c-brown-600);
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .play-field_result {
+        font-size: 2rem;
+        padding: 0.5rem;
+
+        &-card {
+            padding: 0.5rem 2rem 2rem;
+            margin: 0 -0.5rem -0.5rem;
+            @include puzzle-background($c-brown-100);
+        }
+    
+        &-card[data-result='0'] {
+            @include puzzle-background-first($c-brown-100);
+
+        }
+    
+        &-card[data-result='last'] {
+            margin-right: 0.4rem;
+            @include puzzle-background-last($c-brown-100);
+        }
+    }
+}

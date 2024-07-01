@@ -1,0 +1,38 @@
+@import '../../../styles/colors.scss';
+
+.start_btn {
+    position: relative; 
+    padding: 1rem 2rem;
+    color: $c-white;
+    background-color: $c-blue-500;
+    border: 2px solid $c-white;
+    box-shadow: 0 0.5rem 0.5rem -0.4rem $c-white;
+
+    &::after {
+        content: ''; 
+        position: absolute;
+        top: 50%;
+        right: 0; 
+        transform: translate(105%, -50%); 
+        width: 12rem;
+        height: 4rem;
+        background-image: url('../../../assets/img/svg/start_arrow.svg'); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0; 
+        transition: opacity 0.5s ease-in-out; 
+    }
+    
+    &:hover::after,
+    &:focus::after {
+        opacity: 1; 
+    }
+
+    @media (max-width: 960px) {
+        & {
+            font-size: 3.5rem;
+            color: $c-white;
+            -webkit-text-stroke: 0;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import '../../../styles/colors.scss';
+
+.popup_btn {
+    width: 10rem;
+    padding: 1rem;
+    color: $c-white;
+    background-color: $c-blue-500;
+    border: 2px solid $c-white;
+    box-shadow: 0 0.5rem 0.5rem -0.4rem $c-white;
+}

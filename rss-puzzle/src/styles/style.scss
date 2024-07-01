@@ -1,0 +1,36 @@
+@import './reset.scss';
+@import './fons.scss';
+@import './colors.scss';
+
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body {
+    height: 100vh;
+    font-family: 'salina trial', serif;
+    font-size: 4rem;
+    text-align: center;
+    color: $c-brown-600;
+    background-color: $c-blue-100;
+  }
+  
+  .wrapper {
+    max-width: 92rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  @media (max-width: 920px) {
+    body {
+      font-size: 2rem;
+    }
+}
+
+
+  
